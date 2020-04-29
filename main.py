@@ -25,7 +25,8 @@ def main():
     custom_songs_path = r'C:\home\games\steam\steamapps\common\Beat Saber\Beat Saber_Data\CustomLevels'
     for sub_dir in os.listdir(custom_songs_path):
         song_key = sub_dir.split(' ', maxsplit=1)[0]
-        songs[song_key] = None
+        if song_key in songs:
+            songs[song_key] = None
 
     # download
     base_download_url = 'https://beatsaver.com/api/download/key/'
